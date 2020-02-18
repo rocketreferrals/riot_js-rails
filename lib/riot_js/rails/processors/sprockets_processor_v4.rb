@@ -18,8 +18,8 @@ module RiotJs
 
       def self.register_self(config)
         config.assets.configure do |env|
-          env.register_mime_type 'application/javascript', extensions: ['.tag'], charset: :js
-          env.register_preprocessor 'application/javascript', self
+          env.register_mime_type 'text/javascript', extensions: ['.tag'], charset: :js
+          env.register_preprocessor 'text/javascript', self
         end
       end
 
