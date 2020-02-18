@@ -2,8 +2,10 @@ require 'riot_js/rails/processors/compiler'
 
 if Gem::Version.new(Sprockets::VERSION) < Gem::Version.new('3.0.0')
   require 'riot_js/rails/processors/sprockets_processor_v2'
-else
+elsif  Gem::Version.new(Sprockets::VERSION) < Gem::Version.new('4.0.0')
   require 'riot_js/rails/processors/sprockets_processor_v3'
+else
+  require 'riot_js/rails/processors/sprockets_processor_v4'
 end
 
 module RiotJs
